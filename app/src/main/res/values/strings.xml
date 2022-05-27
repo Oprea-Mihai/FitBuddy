@@ -2,4 +2,10 @@
     <string name="app_name">FitBuddyApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_account">Create account</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password">Password</string>
+    <string name="email">email</string>
+    <string name="or">or</string>
+    <string name="confirm_password">confirm password</string>
 </resources>

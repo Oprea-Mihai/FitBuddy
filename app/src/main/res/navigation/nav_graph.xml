@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -37,5 +40,13 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.fitbuddyapp.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

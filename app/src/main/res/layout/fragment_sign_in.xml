@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SignInFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".SignInFragment">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/sign_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/text_view_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_create_account"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sign_in"
+            />
+
+        <EditText
+            android:id="@+id/sign_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/sign_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <EditText
+            android:id="@+id/sign_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLength="15"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sign_in"
+            app:layout_constraintEnd_toEndOf="@id/sign_email"
+            app:layout_constraintStart_toStartOf="@id/sign_email"
+            app:layout_constraintTop_toBottomOf="@id/sign_email" />
+
+        <Button
+            android:id="@+id/btn_sign_in"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/sign_in"
+            app:layout_constraintBottom_toTopOf="@+id/btn_create_account"
+            app:layout_constraintEnd_toEndOf="@id/sign_password"
+            app:layout_constraintStart_toStartOf="@id/sign_password"
+            app:layout_constraintTop_toBottomOf="@id/sign_password"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/btn_create_account"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="@string/create_account"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/btn_sign_in"
+            app:layout_constraintStart_toStartOf="@id/btn_sign_in"
+            app:layout_constraintTop_toBottomOf="@id/btn_sign_in"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
