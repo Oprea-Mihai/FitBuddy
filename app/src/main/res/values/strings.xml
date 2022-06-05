@@ -5,7 +5,9 @@
     <string name="create_account">Create account</string>
     <string name="sign_in">Sign In</string>
     <string name="password">Password</string>
-    <string name="email">email</string>
     <string name="or">or</string>
-    <string name="confirm_password">confirm password</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="welcome">Welcome to FitBuddy</string>
+    <string name="register">Register</string>
 </resources>
