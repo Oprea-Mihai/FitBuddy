@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DAC/FitBuddy/app/src/main/res/drawable/back_to_home_button.xml" value="0.1" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
-        <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_profile.xml" value="0.14130434782608695" />
+        <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_sign_in.xml" value="0.14130434782608695" />
-        <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_sign_up.xml" value="0.4025670945157526" />
+        <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_sign_up.xml" value="0.34670116429495473" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_splash.xml" value="0.1" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />

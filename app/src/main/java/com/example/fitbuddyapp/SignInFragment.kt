@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.fitbuddyapp.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
 class SignInFragment : Fragment() {
@@ -60,7 +61,8 @@ class SignInFragment : Fragment() {
                 .addOnCompleteListener() { signIn->
                     if(signIn.isSuccessful){
                         Toast.makeText(activity, "Sign in successful", Toast.LENGTH_SHORT).show()
-                        view?.findNavController()?.navigate(R.id.action_signInFragment_to_profileFragment)
+                        val directions=SignInFragmentDirections.actionSignInFragmentToProfileFragment(email)
+                        findNavController().navigate(directions)
 
                     }
                     else {

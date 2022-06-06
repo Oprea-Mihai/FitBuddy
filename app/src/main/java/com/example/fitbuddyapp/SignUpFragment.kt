@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.fitbuddyapp.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
@@ -61,6 +63,7 @@ class SignUpFragment : Fragment() {
 
     }
 
+
     //campurile sa fie completate
     private fun notEmpty(): Boolean{
         val email=binding.etEmail.text
@@ -111,14 +114,14 @@ class SignUpFragment : Fragment() {
                             "email" to userEmail,
                             "age" to userAge,
                             "height" to userHeight,
-                            "weight" to userHeight,
+                            "weight" to userWeight,
 
                         )
                         val db= Firebase.firestore
                         db.collection("users").add(user)
+                        val directions=SignUpFragmentDirections.actionSignUpFragmentToProfileFragment(userEmail)
 
-
-                        view?.findNavController()?.navigate(R.id.action_signUpFragment_to_profileFragment)
+                        findNavController().navigate(directions)
 
                     } else{
                         Toast.makeText(activity, "Failed to create", Toast.LENGTH_SHORT).show()
