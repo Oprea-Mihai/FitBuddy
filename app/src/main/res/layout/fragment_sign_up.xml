@@ -106,7 +106,7 @@
 
 
         <EditText
-            android:id="@+id/weight"
+            android:id="@+id/et_weight"
             android:layout_marginHorizontal="30dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -121,10 +121,10 @@
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/age" />
+            app:layout_constraintTop_toBottomOf="@+id/et_age" />
 
         <EditText
-            android:id="@+id/height"
+            android:id="@+id/et_height"
             android:layout_marginHorizontal="30dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weight" />
+            app:layout_constraintTop_toBottomOf="@+id/et_weight" />
 
 
         <Button
@@ -168,7 +168,7 @@
 
 
         <EditText
-            android:id="@+id/age"
+            android:id="@+id/et_age"
             android:layout_marginHorizontal="30dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -196,6 +196,6 @@
             android:text="@string/sign_in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/height" />
+            app:layout_constraintTop_toBottomOf="@+id/et_height" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

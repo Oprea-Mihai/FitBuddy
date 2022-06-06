@@ -10,13 +10,23 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.fitbuddyapp.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SignUpFragment : Fragment() {
     private lateinit var userEmail: String
     private lateinit var userPassword: String
     private lateinit var userConfirmPassword: String
+    private lateinit var userAge: String
+    private lateinit var userWeight: String
+    private lateinit var userHeight: String
+    private lateinit var userID: String
     private lateinit var createAccountInputsArray: Array<EditText>
     private lateinit var binding: FragmentSignUpBinding
+    private lateinit var firestore: FirebaseFirestore
+
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
                                savedInstanceState: Bundle?
@@ -27,10 +37,16 @@ class SignUpFragment : Fragment() {
         createAccountInputsArray= arrayOf(
             binding.etEmail,
             binding.etPassword,
-            binding.etConfirmPassword)
+            binding.etConfirmPassword,
+        binding.etAge,
+        binding.etHeight,
+        binding.etWeight)
 
         binding.btnCreateAccount.setOnClickListener {
-            signIn()
+            signUp()
+        }
+        binding.btnSignIn.setOnClickListener{
+            view?.findNavController()?.navigate(R.id.action_signUpFragment_to_signInFragment)
         }
         return binding.root
     }
@@ -72,20 +88,38 @@ class SignUpFragment : Fragment() {
         return false
     }
 
-    private fun signIn() {
+    private fun signUp() {
         if(identicalPasswords()){
             userEmail=binding.etEmail.text.toString()
             userPassword=binding.etPassword.text.toString()
             userConfirmPassword=binding.etConfirmPassword.text.toString()
+            userAge=binding.etAge.text.toString()
+            userHeight=binding.etHeight.text.toString()
+            userWeight=binding.etWeight.text.toString()
             //creeare user
 
             val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+            var document:DocumentReference
+            var userMap: HashMap<String,Object>
             firebaseAuth.createUserWithEmailAndPassword(userEmail,userPassword)
                 .addOnCompleteListener { task->
                     if(task.isSuccessful){
                         Toast.makeText(activity, "Created Account Successfully!", Toast.LENGTH_SHORT).show()
+                        userID=firebaseAuth.tenantId.toString();
+                        val user = hashMapOf(
+                            "password" to userPassword,
+                            "email" to userEmail,
+                            "age" to userAge,
+                            "height" to userHeight,
+                            "weight" to userHeight,
+
+                        )
+                        val db= Firebase.firestore
+                        db.collection("users").add(user)
+
+
                         view?.findNavController()?.navigate(R.id.action_signUpFragment_to_profileFragment)
-                        Toast.makeText(activity, "Created Account Successfully!", Toast.LENGTH_SHORT).show()
+
                     } else{
                         Toast.makeText(activity, "Failed to create", Toast.LENGTH_SHORT).show()
                     }
