@@ -8,6 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.ProgressBar
+import androidx.core.view.isVisible
 import com.example.fitbuddyapp.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
@@ -31,8 +34,9 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        Thread.sleep(1000)
         binding = FragmentProfileBinding.inflate(layoutInflater)
+  //      view.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
 
         return binding.root
     }
@@ -45,7 +49,6 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val bundle = arguments
-
         if (bundle == null) {
             Log.d("Confirmation", "Fragment didn't recive info")
             return
@@ -54,10 +57,9 @@ class ProfileFragment : Fragment() {
         if (args.idUser.isNullOrBlank()) {
             binding.textUsername.text = getString(R.string.noname)
         } else {
-
             var user_data = db.collection("users").document(args.idUser!!).get().addOnSuccessListener{ result->
                 binding.textUsername.text = result.getString("name")
-
+            view.findViewById<View?>(R.id.loadingPanel).isVisible=false;
             }
 
             }
