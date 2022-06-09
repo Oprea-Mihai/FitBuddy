@@ -55,11 +55,12 @@ class SignInFragment : Fragment() {
         password=binding.signPassword.text.toString()
         if(notEmpty()){
 
-            val user=firebaseAuth.currentUser
+
 
             firebaseAuth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener() { signIn->
                     if(signIn.isSuccessful){
+                        val user=firebaseAuth.currentUser
                         Toast.makeText(activity, "Sign in successful", Toast.LENGTH_SHORT).show()
                         val directions=SignInFragmentDirections.actionSignInFragmentToProfileFragment(
                             user?.uid

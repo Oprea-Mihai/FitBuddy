@@ -26,6 +26,7 @@ class SignUpFragment : Fragment() {
     private lateinit var userAge: String
     private lateinit var userWeight: String
     private lateinit var userHeight: String
+    private lateinit var userName: String
     private lateinit var userID: String
     private lateinit var createAccountInputsArray: Array<EditText>
     private lateinit var binding: FragmentSignUpBinding
@@ -102,6 +103,7 @@ class SignUpFragment : Fragment() {
             userAge=binding.etAge.text.toString()
             userHeight=binding.etHeight.text.toString()
             userWeight=binding.etWeight.text.toString()
+            userName=binding.etName.text.toString()
 
             //creeare user
 
@@ -115,6 +117,7 @@ class SignUpFragment : Fragment() {
                         userID= firebaseAuth.currentUser!!.uid
                         val user = hashMapOf(
                             "password" to userPassword,
+                            "name" to userName,
                             "email" to userEmail,
                             "age" to userAge,
                             "height" to userHeight,

@@ -9,10 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import com.example.fitbuddyapp.databinding.FragmentProfileBinding
-import com.google.firebase.firestore.DocumentReference
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.EventListener
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -54,20 +51,26 @@ class ProfileFragment : Fragment() {
         }
         val args = ProfileFragmentArgs.fromBundle(bundle)
         if (args.idUser.isNullOrBlank()) {
-            binding.textView4.text = getString(R.string.noname)
-        }
-        else {
-         //   val db = FirebaseFirestore.getInstance()
-           // val usersRef = db.collection("users")
-            //usersRef.document(args.idUser!!).get().addOnCompleteListener { task ->
-              //  if (task.isSuccessful) {
-                //    val document = task.result
+            binding.textUsername.text = getString(R.string.noname)
+        } else {
+            val db = Firebase.firestore
+            var user_data = db.collection("users").document(args.idUser!!)
+// Source can be CACHE, SERVER, or DEFAULT.
+            val source = Source.CACHE
 
-                        binding.textView4.text = args.idUser
-
+// Get the document, forcing the SDK to use the offline cache
+            user_data.get(source).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Document found in the offline cache
+                    val document = task.result
+                    binding.textUsername.text = document.getString("name")
 
                 }
+
+
             }
         }
+    }
+}
 
 
