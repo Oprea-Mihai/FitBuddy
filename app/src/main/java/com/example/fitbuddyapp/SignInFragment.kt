@@ -61,7 +61,9 @@ class SignInFragment : Fragment() {
                 .addOnCompleteListener() { signIn->
                     if(signIn.isSuccessful){
                         Toast.makeText(activity, "Sign in successful", Toast.LENGTH_SHORT).show()
-                        val directions=SignInFragmentDirections.actionSignInFragmentToProfileFragment(email)
+                        val directions=SignInFragmentDirections.actionSignInFragmentToProfileFragment(
+                            user?.uid
+                        )
                         findNavController().navigate(directions)
 
                     }

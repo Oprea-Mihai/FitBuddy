@@ -29,7 +29,7 @@
             android:id="@+id/action_signInFragment_to_profileFragment"
             app:destination="@id/profileFragment" >
             <argument
-                android:name="email"
+                android:name="id_user"
                 app:argType="string"
                 app:nullable="true"
                 android:defaultValue="@null" />
@@ -50,7 +50,7 @@
             android:id="@+id/action_signUpFragment_to_profileFragment"
             app:destination="@id/profileFragment">
         <argument
-            android:name="email"
+            android:name="id_user"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null" />
@@ -62,7 +62,7 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <argument
-            android:name="email"
+            android:name="id_user"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null" />

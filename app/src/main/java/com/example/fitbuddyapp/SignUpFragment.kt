@@ -11,7 +11,9 @@ import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.fitbuddyapp.databinding.FragmentSignUpBinding
+import com.example.fitbuddyapp.utils.FirebaseUtils
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -28,6 +30,7 @@ class SignUpFragment : Fragment() {
     private lateinit var createAccountInputsArray: Array<EditText>
     private lateinit var binding: FragmentSignUpBinding
     private lateinit var firestore: FirebaseFirestore
+    private lateinit var firebaseAuth: FirebaseAuth
 
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
@@ -55,11 +58,11 @@ class SignUpFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 //Asta ca sa se logheze automat
-        //  val user: FirebaseUser? = FirebaseUtils.firebaseAuth.currentUser
-        //  user?.let {
-        //     view?.findNavController()?.navigate(R.id.action_signUpFragment_to_feedFragment)
-        //     Toast.makeText(activity, "Welcome Back", Toast.LENGTH_SHORT).show()
-        // }
+       //   val user: FirebaseUser? = firebaseAuth.currentUser
+         //user?.let {
+           // view?.findNavController()?.navigate(R.id.action_signUpFragment_to_profileFragment)
+            // Toast.makeText(activity, "Welcome Back", Toast.LENGTH_SHORT).show()
+         //}
 
     }
 
@@ -99,6 +102,7 @@ class SignUpFragment : Fragment() {
             userAge=binding.etAge.text.toString()
             userHeight=binding.etHeight.text.toString()
             userWeight=binding.etWeight.text.toString()
+
             //creeare user
 
             val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -108,18 +112,21 @@ class SignUpFragment : Fragment() {
                 .addOnCompleteListener { task->
                     if(task.isSuccessful){
                         Toast.makeText(activity, "Created Account Successfully!", Toast.LENGTH_SHORT).show()
-                        userID=firebaseAuth.tenantId.toString();
+                        userID= firebaseAuth.currentUser!!.uid
                         val user = hashMapOf(
                             "password" to userPassword,
                             "email" to userEmail,
                             "age" to userAge,
                             "height" to userHeight,
                             "weight" to userWeight,
-
+                            "gender" to "other"
                         )
                         val db= Firebase.firestore
-                        db.collection("users").add(user)
-                        val directions=SignUpFragmentDirections.actionSignUpFragmentToProfileFragment(userEmail)
+                        db.collection("users").document(userID).set(user)
+
+
+                        val directions=SignUpFragmentDirections.actionSignUpFragmentToProfileFragment(
+                            userID)
 
                         findNavController().navigate(directions)
 
