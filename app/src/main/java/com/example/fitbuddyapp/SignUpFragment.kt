@@ -1,19 +1,19 @@
 package com.example.fitbuddyapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
-import androidx.navigation.Navigation.findNavController
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.fitbuddyapp.databinding.FragmentSignUpBinding
-import com.example.fitbuddyapp.utils.FirebaseUtils
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -32,14 +32,16 @@ class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
     private lateinit var firestore: FirebaseFirestore
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var activity:MainActivity
 
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
                                savedInstanceState: Bundle?
     ): View? {
-
+        // view?.findViewById<View?>(R.id.bottom_view)?.visibility=Gon;
         binding= FragmentSignUpBinding.inflate(layoutInflater)
 
+       // activity.findViewById<BottomNavigationView>(R.id.bottom_view).visibility=View.GONE;
         createAccountInputsArray= arrayOf(
             binding.etEmail,
             binding.etPassword,
