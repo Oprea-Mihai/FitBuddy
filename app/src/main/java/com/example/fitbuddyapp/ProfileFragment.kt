@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.core.view.isVisible
+import androidx.navigation.findNavController
 import com.example.fitbuddyapp.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
@@ -34,9 +35,10 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        Thread.sleep(1000)
         binding = FragmentProfileBinding.inflate(layoutInflater)
-  //      view.findViewById(R.id.loadingPanel).setVisibility(View.GONE);
+        binding.feedBtn.setOnClickListener{
+            view?.findNavController()?.navigate(R.id.action_profileFragment_to_itemFragment)
+        }
 
         return binding.root
     }
