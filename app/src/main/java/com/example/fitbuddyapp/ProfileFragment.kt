@@ -60,12 +60,47 @@ class ProfileFragment : Fragment() {
             binding.textUsername.text = getString(R.string.noname)
         } else {
             var user_data = db.collection("users").document(args.idUser!!).get().addOnSuccessListener{ result->
-                binding.textUsername.text = result.getString("name")
-            view.findViewById<View?>(R.id.loadingPanel).isVisible=false;
-            }
+                binding.textUsername.text =result.getString("name")
 
+                var age =Integer.parseInt(result.getString("age"))
+                var height =Integer.parseInt(result.getString("height"))
+                var weight =Integer.parseInt(result.getString("weight"))
+
+                var auxHeight: Float
+                auxHeight=height.toFloat()/100
+                auxHeight*=auxHeight
+
+                var BMI=weight.toFloat()/auxHeight
+
+                binding.textUserAge.text= age.toString()+" years"
+                binding.textUserHeight.text=height.toString()+" cm"
+                binding.textUserWeight.text=weight.toString()+" kg"
+                binding.textUserBMI.text=BMI.toString().subSequence(0,4)
+                binding.textResultBMI.text=BMIResult(BMI)
+
+                view.findViewById<View?>(R.id.loadingPanel).isVisible=false;
+            }
             }
         }
+
+
+    fun BMIResult(BMI:Float): String{
+        if(BMI<16)
+            return "Severe Thinness"
+        if(BMI>=16&&BMI<17)
+            return "Moderate Thinness"
+        if(BMI>=17&&BMI<18.5)
+            return "Mild Thinness"
+        if(BMI>=18.5&&BMI<25)
+            return "Normal"
+        if(BMI>=25&&BMI<30)
+            return "Overweight"
+        if(BMI>=30&&BMI<35)
+            return "Obese Class I"
+        if(BMI>=35&&BMI<40)
+            return "Obese Class II"
+        else
+            return "Obese Class III"}
     }
 
 
