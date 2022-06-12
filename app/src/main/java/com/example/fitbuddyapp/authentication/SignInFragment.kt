@@ -1,16 +1,20 @@
-package com.example.fitbuddyapp
+package com.example.fitbuddyapp.authentication
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.fitbuddyapp.Main2Activity
+import com.example.fitbuddyapp.R
 import com.example.fitbuddyapp.databinding.FragmentSignInBinding
 import com.google.firebase.auth.FirebaseAuth
+
 class SignInFragment : Fragment() {
     private lateinit var binding: FragmentSignInBinding
     private lateinit var email: String
@@ -62,9 +66,7 @@ class SignInFragment : Fragment() {
                     if(signIn.isSuccessful){
                         val user=firebaseAuth.currentUser
                         Toast.makeText(activity, "Sign in successful", Toast.LENGTH_SHORT).show()
-                        val directions=SignInFragmentDirections.actionSignInFragmentToProfileFragment(
-                            user?.uid
-                        )
+                        val directions=SignInFragmentDirections.actionSignInFragmentToMain2Activity()
                         findNavController().navigate(directions)
 
                     }

@@ -1,16 +1,13 @@
-package com.example.fitbuddyapp
+package com.example.fitbuddyapp.authentication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import com.example.fitbuddyapp.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.example.fitbuddyapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -31,8 +28,8 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.signUpFragment -> hideBottomNav()
-                R.id.signInFragment->hideBottomNav()
-                R.id.splashFragment->hideBottomNav()
+                R.id.signInFragment ->hideBottomNav()
+                R.id.splashFragment ->hideBottomNav()
            else -> showBottomNav()
             }
 

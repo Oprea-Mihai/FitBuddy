@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".authentication.ProfileFragment">
 
         <RelativeLayout
             android:id="@+id/loadingPanel"
@@ -131,43 +131,43 @@
             app:layout_constraintTop_toBottomOf="@id/textUsername"/>
 
         <TextView
-        android:id="@+id/textUserWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:textSize="22dp"
-        android:text="..."
-        app:layout_constraintStart_toEndOf="@id/textWeight"
-        app:layout_constraintTop_toBottomOf="@id/textUserAge"/>
+            android:id="@+id/textUserWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="22dp"
+            android:text="..."
+            app:layout_constraintStart_toEndOf="@id/textWeight"
+            app:layout_constraintTop_toBottomOf="@id/textUserAge"/>
 
         <TextView
-        android:id="@+id/textUserHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:textSize="22dp"
-        android:text="..."
-        app:layout_constraintStart_toEndOf="@id/textHeight"
-        app:layout_constraintTop_toBottomOf="@id/textUserWeight"/>
+            android:id="@+id/textUserHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="22dp"
+            android:text="..."
+            app:layout_constraintStart_toEndOf="@id/textHeight"
+            app:layout_constraintTop_toBottomOf="@id/textUserWeight"/>
 
         <TextView
-        android:id="@+id/textUserBMI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:textSize="22dp"
-        android:text="..."
-        app:layout_constraintStart_toEndOf="@id/textBMI"
-        app:layout_constraintTop_toBottomOf="@id/textUserHeight"/>
+            android:id="@+id/textUserBMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="22dp"
+            android:text="..."
+            app:layout_constraintStart_toEndOf="@id/textBMI"
+            app:layout_constraintTop_toBottomOf="@id/textUserHeight"/>
 
         <TextView
             android:id="@+id/textResultBMI"
@@ -182,15 +182,6 @@
             app:layout_constraintStart_toEndOf="@id/textUserBMI"
             app:layout_constraintTop_toBottomOf="@id/textUserHeight"/>
 
-        <Button
-            android:id="@+id/feed_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:text="Button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

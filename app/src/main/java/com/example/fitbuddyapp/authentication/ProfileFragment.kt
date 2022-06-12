@@ -1,6 +1,5 @@
-package com.example.fitbuddyapp
+package com.example.fitbuddyapp.authentication
 
-import android.media.MediaDrm
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,12 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.ImageView
-import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
+import com.example.fitbuddyapp.R
 import com.example.fitbuddyapp.databinding.FragmentProfileBinding
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -36,9 +33,9 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProfileBinding.inflate(layoutInflater)
-        binding.feedBtn.setOnClickListener{
-            view?.findNavController()?.navigate(R.id.action_profileFragment_to_itemFragment)
-        }
+        //binding.feedBtn.setOnClickListener{
+         //   view?.findNavController()?.navigate(R.id.action_profileFragment_to_itemFragment)
+        //}
 
         return binding.root
     }
