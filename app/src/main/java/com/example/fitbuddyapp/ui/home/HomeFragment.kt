@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.fitbuddyapp.R
-import com.example.fitbuddyapp.authentication.ProfileFragmentArgs
 import com.example.fitbuddyapp.databinding.FragmentHomeBinding
 import com.example.fitbuddyapp.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth

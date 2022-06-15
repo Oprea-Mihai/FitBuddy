@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.findNavController
 import com.example.fitbuddyapp.R
 import com.example.fitbuddyapp.databinding.FragmentProfileBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -52,11 +53,8 @@ class ProfileFragment : Fragment() {
             Log.d("Confirmation", "Fragment didn't recive info")
             return
         }
-        val args = ProfileFragmentArgs.fromBundle(bundle)
-        if (args.idUser.isNullOrBlank()) {
-            binding.textUsername.text = getString(R.string.noname)
-        } else {
-            var user_data = db.collection("users").document(args.idUser!!).get().addOnSuccessListener{ result->
+
+            var user_data = db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener{ result->
                 binding.textUsername.text =result.getString("name")
 
                 var age =Integer.parseInt(result.getString("age"))
@@ -77,7 +75,7 @@ class ProfileFragment : Fragment() {
 
                 view.findViewById<View?>(R.id.loadingPanel).isVisible=false;
             }
-            }
+
         }
 
 

@@ -128,9 +128,7 @@ class SignUpFragment : Fragment() {
                         db.collection("users").document(userID).set(user)
 
 
-                        val directions=SignUpFragmentDirections.actionSignUpFragmentToProfileFragment(
-                            userID)
-
+                        val directions=SignUpFragmentDirections.actionSignUpFragmentToMain2Activity()
                         findNavController().navigate(directions)
 
                     } else{

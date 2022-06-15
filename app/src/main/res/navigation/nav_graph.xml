@@ -30,15 +30,6 @@
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_profileFragment"
-            app:destination="@id/profileFragment" >
-            <argument
-                android:name="id_user"
-                app:argType="string"
-                app:nullable="true"
-                android:defaultValue="@null" />
-        </action>
-        <action
             android:id="@+id/action_signInFragment_to_main2Activity"
             app:destination="@id/main2Activity" />
     </fragment>
@@ -54,25 +45,8 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
         <action
-            android:id="@+id/action_signUpFragment_to_profileFragment"
-            app:destination="@id/profileFragment">
-        <argument
-            android:name="id_user"
-            app:argType="string"
-            app:nullable="true"
-            android:defaultValue="@null" />
-        </action>
-    </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.fitbuddyapp.authentication.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <argument
-            android:name="id_user"
-            app:argType="string"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            android:id="@+id/action_signUpFragment_to_main2Activity"
+            app:destination="@id/main2Activity" />
     </fragment>
     <activity
         android:id="@+id/main2Activity"

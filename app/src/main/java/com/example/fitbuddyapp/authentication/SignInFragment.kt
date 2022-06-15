@@ -59,8 +59,6 @@ class SignInFragment : Fragment() {
         password=binding.signPassword.text.toString()
         if(notEmpty()){
 
-
-
             firebaseAuth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener() { signIn->
                     if(signIn.isSuccessful){
