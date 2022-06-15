@@ -1,5 +1,6 @@
 package com.example.fitbuddyapp.authentication
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -16,14 +17,23 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        view?.findViewById<View?>(R.id.bottom_view)?.isVisible=false;
         val view=inflater.inflate(R.layout.fragment_splash,container,false)
         Handler(Looper.myLooper()!!).postDelayed({
-
-            findNavController().navigate(R.id.action_splashFragment_to_signInFragment)
+if(onBoardingFinished())
+{
+    findNavController().navigate(R.id.action_splashFragment_to_signInFragment)
+}
+            else{
+    findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
+            }
 
         },3500)
         return view
+    }
+
+        private fun onBoardingFinished():Boolean{
+            val sharedPref=requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+           return sharedPref.getBoolean("Finished",false)
 
     }
 }
