@@ -33,7 +33,10 @@ class SelectYourGenderFragment : Fragment() {
             val db= Firebase.firestore
            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","female")
         }
-
+  binding.tvSkip.setOnClickListener(){
+      val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToMain2Activity()
+      findNavController().navigate(directions)
+  }
         return binding.root
     }
 }

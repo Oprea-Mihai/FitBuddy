@@ -69,10 +69,14 @@ class HomeFragment : Fragment() {
                     binding.imageProfile.setImageDrawable(getResources().getDrawable(R.drawable.man))
 
                 }
-                else if(result.getString(("gender"))=="female")
+                if(result.getString(("gender"))=="female")
                 {
                     binding.imageProfile.setImageDrawable(getResources().getDrawable(R.drawable.woman))
 
+                }
+                else if(result.getString(("gender"))=="other")
+                {
+                    binding.imageProfile.setImageDrawable(getResources().getDrawable(R.drawable.user))
                 }
 
 
