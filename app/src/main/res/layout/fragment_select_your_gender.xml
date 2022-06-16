@@ -71,14 +71,13 @@
         android:id="@+id/tv_Chose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="40dp"
         android:text="Which of the following most accurately describes you?"
         android:textColor="@color/light_blue"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@id/tv_description"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/tv_description"
         app:layout_constraintTop_toBottomOf="@id/tv_description" />
 
