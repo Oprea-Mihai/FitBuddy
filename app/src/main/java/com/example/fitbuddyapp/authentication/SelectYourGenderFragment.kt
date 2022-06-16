@@ -21,20 +21,20 @@ class SelectYourGenderFragment : Fragment() {
     ): View? {
         binding= FragmentSelectYourGenderBinding.inflate(layoutInflater)
         binding.imgMale.setOnClickListener{
-            val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToMain2Activity()
+            val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToHowActiveAreYou()
             findNavController().navigate(directions)
             val db= Firebase.firestore
            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","male")
         }
 
         binding.imgFemale.setOnClickListener{
-            val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToMain2Activity()
+            val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToHowActiveAreYou()
             findNavController().navigate(directions)
             val db= Firebase.firestore
            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","female")
         }
   binding.tvSkip.setOnClickListener(){
-      val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToMain2Activity()
+      val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToHowActiveAreYou()
       findNavController().navigate(directions)
   }
         return binding.root

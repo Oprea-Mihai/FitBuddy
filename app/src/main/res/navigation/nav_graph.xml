@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_signInFragment_to_selectYourGenderFragment"
             app:destination="@id/selectYourGenderFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_howActiveAreYou"
+            app:destination="@id/howActiveAreYou" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -75,7 +78,19 @@
             android:id="@+id/action_selectYourGenderFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
         <action
+            android:id="@+id/action_selectYourGenderFragment_to_howActiveAreYou"
+            app:destination="@id/howActiveAreYou" />
+        <action
             android:id="@+id/action_selectYourGenderFragment_to_main2Activity"
+            app:destination="@id/main2Activity" />
+    </fragment>
+    <fragment
+        android:id="@+id/howActiveAreYou"
+        android:name="com.example.fitbuddyapp.authentication.HowActiveAreYou"
+        android:label="fragment_how_active_are_you"
+        tools:layout="@layout/fragment_how_active_are_you" >
+        <action
+            android:id="@+id/action_howActiveAreYou_to_main2Activity"
             app:destination="@id/main2Activity" />
     </fragment>
 </navigation>

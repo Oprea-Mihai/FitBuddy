@@ -75,13 +75,16 @@ class SignInFragment : Fragment() {
                             .addOnSuccessListener { result ->
 
                                var gender = result.getString("gender").toString()
+                                var how_active=result.getString("how active").toString()
                                 if (gender == "other")
                                 {  view?.findNavController()?.navigate(R.id.action_signInFragment_to_selectYourGenderFragment)
-                                    Toast.makeText(activity, "Gender is other", Toast.LENGTH_SHORT).show()
                                 } else {
-                                    Toast.makeText(activity, "Gender is NOT other", Toast.LENGTH_SHORT).show()
+                                    if (how_active=="empty")
+                                    {view?.findNavController()?.navigate(R.id.action_signInFragment_to_howActiveAreYou)}
+                                    else{
                                     directions = SignInFragmentDirections.actionSignInFragmentToMain2Activity()
                                     findNavController().navigate(directions)
+                                    }
                                 }
                             }
                     }

@@ -120,7 +120,8 @@ class SignUpFragment : Fragment() {
                             "age" to userAge,
                             "height" to userHeight,
                             "weight" to userWeight,
-                            "gender" to "other"
+                            "gender" to "other",
+                          "how active" to "empty"
                         )
                         val db= Firebase.firestore
                         db.collection("users").document(userID).set(user)
