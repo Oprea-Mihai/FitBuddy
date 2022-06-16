@@ -24,14 +24,14 @@ class SelectYourGenderFragment : Fragment() {
             val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToMain2Activity()
             findNavController().navigate(directions)
             val db= Firebase.firestore
-            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","male")
+           db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","male")
         }
 
         binding.imgFemale.setOnClickListener{
             val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToMain2Activity()
             findNavController().navigate(directions)
             val db= Firebase.firestore
-            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","female")
+           db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","female")
         }
 
         return binding.root

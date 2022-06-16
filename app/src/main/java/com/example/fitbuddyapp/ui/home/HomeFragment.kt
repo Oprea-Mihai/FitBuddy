@@ -64,6 +64,17 @@ class HomeFragment : Fragment() {
                 var age = Integer.parseInt(result.getString("age"))
                 var height = Integer.parseInt(result.getString("height"))
                 var weight = Integer.parseInt(result.getString("weight"))
+                if(result.getString(("gender"))=="male")
+                {
+                    binding.imageProfile.setImageDrawable(getResources().getDrawable(R.drawable.man))
+
+                }
+                else if(result.getString(("gender"))=="female")
+                {
+                    binding.imageProfile.setImageDrawable(getResources().getDrawable(R.drawable.woman))
+
+                }
+
 
                 var auxHeight: Float
                 auxHeight = height.toFloat() / 100

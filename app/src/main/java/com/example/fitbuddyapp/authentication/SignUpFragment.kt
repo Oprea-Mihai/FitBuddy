@@ -8,7 +8,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.fitbuddyapp.R
 import com.example.fitbuddyapp.databinding.FragmentSignUpBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -30,7 +29,6 @@ class SignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignUpBinding
     private lateinit var firestore: FirebaseFirestore
     private lateinit var firebaseAuth: FirebaseAuth
-    private lateinit var activity: MainActivity
 
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?,
