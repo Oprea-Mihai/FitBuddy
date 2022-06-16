@@ -9,6 +9,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.fitbuddyapp.R
 import com.example.fitbuddyapp.databinding.FragmentSelectYourGenderBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SelectYourGenderFragment : Fragment() {
     private lateinit var binding:FragmentSelectYourGenderBinding
@@ -20,11 +23,15 @@ class SelectYourGenderFragment : Fragment() {
         binding.imgMale.setOnClickListener{
             val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToMain2Activity()
             findNavController().navigate(directions)
+            val db= Firebase.firestore
+            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","male")
         }
 
         binding.imgFemale.setOnClickListener{
             val directions=SelectYourGenderFragmentDirections.actionSelectYourGenderFragmentToMain2Activity()
             findNavController().navigate(directions)
+            val db= Firebase.firestore
+            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("gender","female")
         }
 
         return binding.root
