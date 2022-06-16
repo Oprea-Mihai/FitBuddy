@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_signInFragment_to_main2Activity"
             app:destination="@id/main2Activity" />
+        <action
+            android:id="@+id/action_signInFragment_to_selectYourGenderFragment"
+            app:destination="@id/selectYourGenderFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -45,8 +48,8 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
         <action
-            android:id="@+id/action_signUpFragment_to_main2Activity"
-            app:destination="@id/main2Activity" />
+            android:id="@+id/action_signUpFragment_to_selectYourGenderFragment"
+            app:destination="@id/selectYourGenderFragment" />
     </fragment>
     <activity
         android:id="@+id/main2Activity"
@@ -62,8 +65,17 @@
         <action
             android:id="@+id/action_viewPagerFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectYourGenderFragment"
+        android:name="com.example.fitbuddyapp.authentication.SelectYourGenderFragment"
+        android:label="fragment_select_your_gender"
+        tools:layout="@layout/fragment_select_your_gender" >
         <action
-            android:id="@+id/action_viewPagerFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
+            android:id="@+id/action_selectYourGenderFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_selectYourGenderFragment_to_main2Activity"
+            app:destination="@id/main2Activity" />
     </fragment>
 </navigation>

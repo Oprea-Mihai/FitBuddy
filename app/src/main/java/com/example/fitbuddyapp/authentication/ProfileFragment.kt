@@ -48,11 +48,7 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val bundle = arguments
-        if (bundle == null) {
-            Log.d("Confirmation", "Fragment didn't recive info")
-            return
-        }
+
 
             var user_data = db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener{ result->
                 binding.textUsername.text =result.getString("name")

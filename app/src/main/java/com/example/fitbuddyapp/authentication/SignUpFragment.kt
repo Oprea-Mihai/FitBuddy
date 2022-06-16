@@ -128,8 +128,7 @@ class SignUpFragment : Fragment() {
                         db.collection("users").document(userID).set(user)
 
 
-                        val directions=SignUpFragmentDirections.actionSignUpFragmentToMain2Activity()
-                        findNavController().navigate(directions)
+                        view?.findNavController()?.navigate(R.id.action_signUpFragment_to_selectYourGenderFragment)
 
                     } else{
                         Toast.makeText(activity, "Failed to create", Toast.LENGTH_SHORT).show()
