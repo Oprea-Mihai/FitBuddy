@@ -31,6 +31,7 @@ class Main2Activity : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         //aici am incercat sa fac side nav ul sa aiba numele corect da nu a iesit :(
+        getSupportActionBar()?.title ="Menu"
 
         header_binding= NavHeaderMain2Binding.inflate(layoutInflater)
         var user_data = db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener { result ->
@@ -51,7 +52,7 @@ class Main2Activity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_steps_counter,R.id.nav_food
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -9,6 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitBuddyApp">
         <activity
+            android:name=".ProfilActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StepsCounterActivity"
+            android:exported="false" />
+        <activity
             android:name=".Main2Activity"
             android:exported="false"
             android:label="@string/title_activity_main2"

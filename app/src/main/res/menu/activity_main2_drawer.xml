@@ -10,10 +10,10 @@
             android:title="Profile" />
         <item
             android:id="@+id/nav_exercises"
-            android:icon="@drawable/ic_dumbbel"
+            android:icon="@drawable/ic_dumbbell"
             android:title="Exercises" />
         <item
-            android:id="@+id/nav_steps"
+            android:id="@+id/nav_steps_counter"
             android:icon="@drawable/ic_steps"
             android:title="Steps counter" />
 

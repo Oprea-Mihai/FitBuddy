@@ -54,8 +54,12 @@
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/drawable/rounded_edittext.xml" value="0.2895" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_main2.xml" value="0.28541666666666665" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_profil.xml" value="0.28541666666666665" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_steps_counter.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/app_bar_main2.xml" value="0.28541666666666665" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/content_main2.xml" value="0.13880445795339413" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_first_screen.xml" value="0.28541666666666665" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_food.xml" value="0.284375" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_gallery.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_home.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_how_active_are_you.xml" value="0.28541666666666665" />
@@ -63,8 +67,10 @@
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_sign_up.xml" value="0.22" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_splash.xml" value="0.13880445795339413" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_steps_counter.xml" value="0.25" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_third_screen.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/menu/activity_main2_drawer.xml" value="0.9" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/menu/main2.xml" value="0.28541666666666665" />
       </map>
     </option>
   </component>
