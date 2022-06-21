@@ -19,6 +19,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.fitbuddyapp.R
+import kotlinx.coroutines.currentCoroutineContext
+import java.time.LocalTime
 import java.util.*
 import java.util.jar.Manifest
 
@@ -38,8 +40,8 @@ class StepsCounterFragment : Fragment(), SensorEventListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //loadData()
-        //resetSteps()
+        loadData()
+        resetSteps()
         sensorManager = activity!!.getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
 
@@ -121,19 +123,20 @@ class StepsCounterFragment : Fragment(), SensorEventListener {
         }
     }
 
-//    override fun onResume() {
-//        super.onResume()
-//        running = true
-//        val stepSensor = sensorManager?.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
-//
-//        if (stepSensor == null) {
-//            Toast.makeText(activity, "No sensor detected on this device", Toast.LENGTH_SHORT)
-//                .show();
-//        } else {
-//            sensorManager?.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_UI)
-//        }
-//
-//    }
+    override fun onResume() {
+        super.onResume()
+        running = true
+        val stepSensor = sensorManager?.getDefaultSensor(Sensor.TYPE_STEP_COUNTER)
+
+        if (stepSensor == null) {
+            Toast.makeText(activity, "No sensor detected on this device", Toast.LENGTH_SHORT)
+                .show();
+        } else {
+            sensorManager?.registerListener(this, stepSensor, 0)
+
+        }
+
+    }
 
     override fun onSensorChanged(event: SensorEvent?) {
         if (running) {
@@ -150,25 +153,28 @@ class StepsCounterFragment : Fragment(), SensorEventListener {
 
     private fun resetSteps() {
 
-        view!!.findViewById<TextView>(R.id.tv_stepsTaken).setOnClickListener {
-            Toast.makeText(activity, "Long tap to reset steps", Toast.LENGTH_SHORT).show()
-        }
+//        view!!.findViewById<TextView>(R.id.tv_stepsTaken).setOnClickListener {
+//            Toast.makeText(activity, "Long tap to reset steps", Toast.LENGTH_SHORT).show()
+//        }
 
-        view!!.findViewById<TextView>(R.id.tv_stepsTaken).setOnLongClickListener() {
-            previousTotalSteps = totalSteps
-            view!!.findViewById<TextView>(R.id.tv_stepsTaken).text = 0.toString()
-            saveData()
+//        view!!.findViewById<TextView>(R.id.tv_stepsTaken).setOnLongClickListener() {
+//            previousTotalSteps = totalSteps
+//            view!!.findViewById<TextView>(R.id.tv_stepsTaken).text = 0.toString()
+//            //saveData()
+//
+//            true
+//        }
 
-            true
-        }
 //        if(Calendar.getInstance().get(Calendar.HOUR)==0 &&
 //            Calendar.getInstance().get(Calendar.MINUTE)==0&&
 //            Calendar.getInstance().get(Calendar.SECOND)==0)
-//        {
-//            previousTotalSteps=totalSteps
-//            view!!.findViewById<TextView>(R.id.tv_stepsTaken).text=0.toString()
-//            saveData()
-//        }
+        if (  LocalTime.now().hour==19&&LocalTime.now().second==0)
+        {
+            previousTotalSteps=totalSteps
+            totalSteps= 0F
+            view!!.findViewById<TextView>(R.id.tv_stepsTaken).text=0.toString()
+           saveData()
+        }
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
