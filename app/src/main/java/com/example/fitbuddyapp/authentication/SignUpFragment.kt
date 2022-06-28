@@ -71,8 +71,11 @@ class SignUpFragment : Fragment() {
         val email=binding.etEmail.text
         val password=binding.etPassword.text
         val confirmPassword=binding.etConfirmPassword.text
+        val height=binding.etHeight.text
+        val weight=binding.etWeight.text
+        val age=binding.etAge.text
 
-        return (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty())
+        return (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()&&height.isNotEmpty()&&weight.isNotEmpty()&&age.isNotEmpty())
     }
 
     private  fun identicalPasswords():Boolean{

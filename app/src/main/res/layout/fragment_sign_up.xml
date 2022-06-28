@@ -45,12 +45,13 @@
             android:layout_marginBottom="-240dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+
         <TextView
             android:id="@+id/tv_signin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="4dp"
             android:text="Sign Up"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -284,7 +285,7 @@
             android:id="@+id/et_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="112dp"
             android:layout_marginTop="32dp"
             android:hint="Age"
             android:inputType="number"
