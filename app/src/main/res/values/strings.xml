@@ -121,4 +121,6 @@
     <string name="food">Food insights</string>
     <string name="decription">o decriere</string>
     <string name="workoutsuggestions">Workout Suggestions</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_find_my_gym">findMyGymActivity</string>
 </resources>

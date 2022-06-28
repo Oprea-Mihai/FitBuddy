@@ -18,8 +18,10 @@
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/drawable/rounded_editetext.xml" value="0.114" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/drawable/rounded_edittext.xml" value="0.114" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/drawable/side_nav_bar.xml" value="0.1645" />
+        <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/activity_find_my_gym.xml" value="0.1640625" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/activity_main.xml" value="0.14130434782608695" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/activity_main2.xml" value="0.1796875" />
+        <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/activity_maps.xml" value="0.1796875" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/app_bar_main2.xml" value="0.14666666666666667" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/content_main2.xml" value="0.1796875" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_first_screed.xml" value="0.1" />
@@ -37,6 +39,7 @@
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_sign_up.xml" value="0.22" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_slideshow.xml" value="0.1796875" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_splash.xml" value="0.1" />
+        <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_steps_counter.xml" value="0.1796875" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_third_screen.xml" value="0.14666666666666667" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/fragment_view_pager.xml" value="0.1" />
         <entry key="..\:/DAC/FitBuddy/app/src/main/res/layout/nav_header_main2.xml" value="0.1796875" />
