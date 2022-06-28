@@ -15,7 +15,9 @@
     <string name="height">Height:</string>
     <string name="bmi">BMI:</string>
     <string name="noname"> </string>
+    <string name="api_key">6be561f3ef744693bde32798363338a9</string>
     <string name="large_text">
+
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
@@ -121,4 +123,13 @@
     <string name="food">Food insights</string>
     <string name="decription">o decriere</string>
     <string name="workoutsuggestions">Workout Suggestions</string>
+    <string name="title_activity_food">FoodActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
