@@ -32,6 +32,25 @@
         android:name="com.example.fitbuddyapp.ui.exercises.ItemFragment"
         android:label="fragment_item_list"
         tools:layout="@layout/fragment_item_list" />
+    <fragment
+        android:id="@+id/exercisesHomeFragment"
+        android:name="com.example.fitbuddyapp.ui.exercises.ExercisesHomeFragment"
+        android:label="ExercisesHomeFragment" >
+        <action
+            android:id="@+id/action_exerciseHomeFragment_to_currentFragment"
+            app:destination="@id/currentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentFragment"
+        android:name="com.example.fitbuddyapp.ui.exercises.CurrentExercise"
+        android:label="CurrentFragment" >
+        <action
+            android:id="@+id/action_currentFragment_to_exercisesHomeFragment"
+            app:destination="@id/exercisesHomeFragment" />
+        <argument
+            android:name="position_arg"
+            app:argType="integer" />
+    </fragment>
 
 
 </navigation>

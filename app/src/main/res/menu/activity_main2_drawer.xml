@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_profile"
             android:title="Profile" />
         <item
-            android:id="@+id/itemFragment"
+            android:id="@+id/exercisesHomeFragment"
             android:icon="@drawable/ic_dumbbell"
             android:title="Exercises" />
         <item
