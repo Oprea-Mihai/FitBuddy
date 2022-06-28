@@ -1,4 +1,4 @@
-package com.example.fitbuddyapp.Adapters;
+package com.example.fitbuddyapp.ui.food;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -13,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitbuddyapp.R;
 import com.example.fitbuddyapp.ui.food.Models.Nutrient;
-import com.example.fitbuddyapp.ui.food.Models.Nutrition;
 import com.example.fitbuddyapp.ui.food.Models.Result;
 import com.squareup.picasso.Picasso;
 
@@ -38,15 +38,24 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeViewHolder> {
     public void onBindViewHolder(@NonNull RecipeViewHolder holder, int position) {
         holder.textView_title.setText(list.get(position).title);
         holder.textView_title.setSelected(true);
-        for (Nutrient nutrient :list.get(position).nutrition.nutrients) {
-            if(nutrient.name=="Calories")
-                holder.textView_kcal.setText("Kcal: "+nutrient.amount);
-            else if(nutrient.name=="Protein")
-                holder.textView_protein.setText("Protein: "+nutrient.amount);
-            else if(nutrient.name=="Fat")
-                holder.textView_fat.setText("Fat: "+nutrient.amount);
-            else if(nutrient.name=="Carbohydrates")
-                holder.textView_carbs.setText("Carbs: "+nutrient.amount);
+        if(list.get(position).nutrition.nutrients.size()!=0)
+        for (int i=0;i<list.get(position).nutrition.nutrients.size();i++) {
+
+            if(list.get(position).nutrition.nutrients.get(i).name.equals("Calories"))
+                holder.textView_kcal.setText
+                        ("Kcal: "+(int)list.get(position).nutrition.nutrients.get(i).amount);
+
+            else if(list.get(position).nutrition.nutrients.get(i).name.equals("Protein"))
+                holder.textView_protein.setText
+                        ("Protein: "+(int)list.get(position).nutrition.nutrients.get(i).amount);
+
+            else if(list.get(position).nutrition.nutrients.get(i).name.equals("Fat"))
+                holder.textView_fat.setText
+                        ("Fat: "+(int)list.get(position).nutrition.nutrients.get(i).amount);
+
+            else if(list.get(position).nutrition.nutrients.get(i).name.equals("Carbohydrates"))
+                holder.textView_carbs.setText
+                        ("Carbs: "+(int)list.get(position).nutrition.nutrients.get(i).amount);
         }
 
         Picasso.get().load(list.get(position).image).into(holder.imageView_food);

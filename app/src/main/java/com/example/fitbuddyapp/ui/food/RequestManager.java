@@ -29,9 +29,9 @@ public class RequestManager {
         this.context = context;
     }
 
-    public void getRecipes(RecipeResponseListener listener) {
+    public void getRecipes(RecipeResponseListener listener,String query) {
         CallRecipes callRecipes = retrofit.create(CallRecipes.class);
-        Call<RecipeApiResponse> call = callRecipes.callRecipe("6be561f3ef744693bde32798363338a9", "10");
+        Call<RecipeApiResponse> call = callRecipes.callRecipe(query,"0","1","6be561f3ef744693bde32798363338a9","0","0","0");
 
         call.enqueue(new Callback<RecipeApiResponse>() {
             @Override
@@ -54,8 +54,13 @@ public class RequestManager {
     private interface CallRecipes {
         @GET("recipes/complexSearch")
         Call<RecipeApiResponse> callRecipe(
+                @Query("query")String query,
+                @Query("minProtein")String minProtein,
+                @Query("number") String number,
                 @Query("apiKey") String apiKey,
-                @Query("number") String number
+                @Query("minFat")String minFat,
+                @Query("minCalories")String minCalories,
+                @Query("minCarbs")String minCarbs
         );
 
     }

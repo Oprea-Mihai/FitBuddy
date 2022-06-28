@@ -62,10 +62,14 @@
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_blank.xml" value="0.19010416666666666" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_first_screen.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_food.xml" value="0.284375" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_food2.xml" value="0.1" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_gallery.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_home.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_how_active_are_you.xml" value="0.28541666666666665" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_item.xml" value="0.1484375" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_item_list.xml" value="0.264" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_second_screen.xml" value="0.1484375" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_sign_up.xml" value="0.22" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_splash.xml" value="0.13880445795339413" />
