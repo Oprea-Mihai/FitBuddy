@@ -28,7 +28,7 @@ class CurrentExercise:Fragment(R.layout.current_exercise_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as AppCompatActivity).supportActionBar?.title="${SignsObject.getTitle(args.positionArg)}"
+        (activity as AppCompatActivity).supportActionBar?.title="${ExerciseObject.getTitle(args.positionArg)}"
 
         if(args.positionArg==0){
             binding.previousSign.isInvisible=true
@@ -37,9 +37,9 @@ class CurrentExercise:Fragment(R.layout.current_exercise_fragment) {
             binding.forwardSign.isInvisible=true
         }
 
-        binding.currentSignImage.setImageResource(SignsObject.getImage(args.positionArg))
-        binding.currentSignName.text = SignsObject.getTitle(args.positionArg)
-        binding.currentPrevisionText.text= SignsObject.getPrediction(args.positionArg)
+        binding.currentSignImage.setImageResource(ExerciseObject.getImage(args.positionArg))
+        binding.currentSignName.text = ExerciseObject.getTitle(args.positionArg)
+        binding.currentPrevisionText.text= ExerciseObject.getPrediction(args.positionArg)
 
         binding.previousSign.setOnClickListener{
 
@@ -58,7 +58,7 @@ class CurrentExercise:Fragment(R.layout.current_exercise_fragment) {
         val shareIntent= Intent(Intent.ACTION_SEND)
         shareIntent.setType("text/plain")
             .putExtra(Intent.EXTRA_TEXT,
-                "${SignsObject.getTitle(args.positionArg)} - ${SignsObject.getPrediction(args.positionArg)}")
+                "${ExerciseObject.getTitle(args.positionArg)} - ${ExerciseObject.getPrediction(args.positionArg)}")
         return shareIntent}
 
     }

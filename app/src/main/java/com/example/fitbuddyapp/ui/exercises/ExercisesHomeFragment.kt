@@ -5,17 +5,13 @@ import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fitbuddyapp.R
 import com.example.fitbuddyapp.databinding.FragmentExercisesHomeBinding
-import com.example.fitbuddyapp.ui.exercises.SignsObject.getSignSize
+import com.example.fitbuddyapp.ui.exercises.ExerciseObject.getSignSize
 import kotlinx.coroutines.*
-import java.util.*
-
 
 class ExercisesHomeFragment : Fragment() {
 
@@ -57,7 +53,7 @@ class ExercisesHomeFragment : Fragment() {
         coroutineScope.launch {
 
             for(index in 0..getSignSize()){
-            val sign = SignsObject.getTitle(index).lowercase()
+            val sign = ExerciseObject.getTitle(index).lowercase()
 
             }
         }

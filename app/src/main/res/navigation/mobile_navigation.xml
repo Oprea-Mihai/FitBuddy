@@ -28,11 +28,6 @@
         android:label="Maps"
         tools:layout="@layout/activity_find_my_gym" />
     <fragment
-        android:id="@+id/itemFragment"
-        android:name="com.example.fitbuddyapp.ui.exercises.ItemFragment"
-        android:label="fragment_item_list"
-        tools:layout="@layout/fragment_item_list" />
-    <fragment
         android:id="@+id/exercisesHomeFragment"
         android:name="com.example.fitbuddyapp.ui.exercises.ExercisesHomeFragment"
         android:label="ExercisesHomeFragment" >

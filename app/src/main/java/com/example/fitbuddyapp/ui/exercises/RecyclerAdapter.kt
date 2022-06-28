@@ -11,9 +11,9 @@ import com.example.fitbuddyapp.R
 class RecyclerAdapter(val onSelect:(position: Int)->Unit ) : RecyclerView.Adapter<ExerciseViewHolder>(){
 
 
-    private  val title: List<String> = SignsObject.getTitles()
-    private val detail:List<String> = SignsObject.getDetails()
-    private val image:List<Int> = SignsObject.getImages()
+    private  val title: List<String> = ExerciseObject.getTitles()
+    private val detail:List<String> = ExerciseObject.getDetails()
+    private val image:List<Int> = ExerciseObject.getImages()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder{
