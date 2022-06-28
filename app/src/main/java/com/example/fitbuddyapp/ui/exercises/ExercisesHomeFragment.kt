@@ -1,10 +1,10 @@
 package com.example.fitbuddyapp.ui.exercises
-
 import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -62,8 +62,9 @@ class ExercisesHomeFragment : Fragment() {
 
 
     private fun onSelect(position: Int){
-        Log.i("Home Fragment", "$position")
-
+        Log.i("Main Activity", "$position")
+        val action=ExercisesHomeFragmentDirections.actionExerciseHomeFragmentToCurrentFragment(position)
+        view?.let { Navigation.findNavController(it).navigate(action) }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
