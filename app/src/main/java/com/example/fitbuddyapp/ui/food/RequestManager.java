@@ -31,7 +31,7 @@ public class RequestManager {
 
     public void getRecipes(RecipeResponseListener listener,String query) {
         CallRecipes callRecipes = retrofit.create(CallRecipes.class);
-        Call<RecipeApiResponse> call = callRecipes.callRecipe(query,"0","1","6be561f3ef744693bde32798363338a9","0","0","0");
+        Call<RecipeApiResponse> call = callRecipes.callRecipe(query,"0","3","6be561f3ef744693bde32798363338a9","0","0","0");
 
         call.enqueue(new Callback<RecipeApiResponse>() {
             @Override

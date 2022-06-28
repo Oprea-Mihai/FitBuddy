@@ -61,7 +61,7 @@ public class FoodFragment extends Fragment {
         dialog = new ProgressDialog(getActivity());
         dialog.setTitle("Loading");
         manager = new RequestManager(getActivity());
-        manager.getRecipes(recipeResponseListener);
+        manager.getRecipes(recipeResponseListener,"apples");
         dialog.show();
     }
 
