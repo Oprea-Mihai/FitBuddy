@@ -54,16 +54,10 @@ class ExercisesHomeFragment : Fragment() {
         var coroutineScope= CoroutineScope(job+Dispatchers.IO)
 
         coroutineScope.launch {
-            var user_data = db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener { result ->
-
-                var difficulty = result.getString("how active")
                 for(index in 0..getSignSize()) {
                         val sign = ExerciseObject.getTitle(index).lowercase()
                 }
-            }
-
         }
-
     }
     private fun onSelect(position: Int){
         val action=ExercisesHomeFragmentDirections.actionExerciseHomeFragmentToCurrentFragment(position)

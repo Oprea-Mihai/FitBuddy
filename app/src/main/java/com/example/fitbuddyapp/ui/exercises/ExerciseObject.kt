@@ -6,22 +6,22 @@ object ExerciseObject {
     public var exercisesList= mutableListOf<Exercises>()
 
     init {
-        exercisesList.add(Exercises("Genoflexiuni","20 de repetari", R.drawable.genoflexiuni,"1"))
-        exercisesList.add(Exercises("Flotari","10 repetari", R.drawable.flotari,"1"))
-        exercisesList.add(Exercises("Sarituri","10 repetari", R.drawable.sarituri,"2"))
-        exercisesList.add(Exercises("Flexii abdominale","12 repetari", R.drawable.flexiiabdominale,"1"))
-        exercisesList.add(Exercises("Alergare","10 minute", R.drawable.runner,"2"))
-        exercisesList.add(Exercises("Ridicari de greutati","20 de repetari", R.drawable.greutati,"1"))
-        exercisesList.add(Exercises("Genoflexiuni cu saritura","10 repetari", R.drawable.genoflexiunicusaritura,"3"))
-        exercisesList.add(Exercises("Ridicari","10 repetari", R.drawable.ridicari,"3"))
-        exercisesList.add(Exercises("Ridicari de brate","12 repetari", R.drawable.ridicaridebrate,"1"))
-        exercisesList.add(Exercises("Fandari inapoi","10 repetari", R.drawable.lunges,"1"))
-        exercisesList.add(Exercises("Scaunul","10 repetari", R.drawable.scaunul,"2"))
-        exercisesList.add(Exercises("Ridcari de corp","20 de repetari", R.drawable.cardio,"1"))
-        exercisesList.add(Exercises("Scandura","20 de repetari", R.drawable.scanduradreapta,"1"))
-        exercisesList.add(Exercises("Ridicari de bazin","45 de secunde", R.drawable.scandura,"2"))
-        exercisesList.add(Exercises("Fandari laterale","20 de repetari", R.drawable.fandarilaterale,"1"))
-        exercisesList.add(Exercises("Plank","45 de secunde", R.drawable.plank,"1"))
+        exercisesList.add(Exercises("Genoflexiuni",20,"de repetari", R.drawable.genoflexiuni,"1"))
+        exercisesList.add(Exercises("Flotari",10,"(de) repetari", R.drawable.flotari,"1"))
+        exercisesList.add(Exercises("Sarituri",10," (de) repetari", R.drawable.sarituri,"2"))
+        exercisesList.add(Exercises("Flexii abdominale",12,"(de) repetari", R.drawable.flexiiabdominale,"1"))
+        exercisesList.add(Exercises("Alergare",10," (de) minute", R.drawable.runner,"2"))
+        exercisesList.add(Exercises("Ridicari de greutati",20,"de repetari", R.drawable.greutati,"1"))
+        exercisesList.add(Exercises("Genoflexiuni cu saritura",10," (de) repetari", R.drawable.genoflexiunicusaritura,"3"))
+        exercisesList.add(Exercises("Ridicari",10,"(de) repetari", R.drawable.ridicari,"3"))
+        exercisesList.add(Exercises("Ridicari de brate",12,"(de) repetari", R.drawable.ridicaridebrate,"1"))
+        exercisesList.add(Exercises("Fandari inapoi",10,"(de) repetari", R.drawable.lunges,"1"))
+        exercisesList.add(Exercises("Scaunul",10,"(de) repetari", R.drawable.scaunul,"2"))
+        exercisesList.add(Exercises("Ridcari de corp",20," de repetari", R.drawable.cardio,"1"))
+        exercisesList.add(Exercises("Scandura",20," de repetari", R.drawable.scanduradreapta,"1"))
+        exercisesList.add(Exercises("Ridicari de bazin",45,"de secunde", R.drawable.scandura,"2"))
+        exercisesList.add(Exercises("Fandari laterale",20,"de repetari", R.drawable.fandarilaterale,"1"))
+        exercisesList.add(Exercises("Plank",45," de secunde", R.drawable.plank,"1"))
 
     }
 
@@ -31,6 +31,13 @@ object ExerciseObject {
             title.add(signs.title)
         }
         return title
+    }
+    fun getNumbers():List<Int>{
+        val numbers= mutableListOf<Int>()
+        for (exercise in exercisesList) {
+            numbers.add(exercise.number)
+        }
+        return numbers
     }
 
     fun getPredictions():List<String>{
@@ -43,6 +50,9 @@ object ExerciseObject {
 
     fun getTitle(position:Int): String {
        return exercisesList[position].title
+    }
+    fun getNumber(position: Int):Int{
+        return exercisesList[position].number
     }
 
     fun getDetail(position:Int): String {

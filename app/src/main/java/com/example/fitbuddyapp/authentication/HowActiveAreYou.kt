@@ -23,20 +23,20 @@ class HowActiveAreYou : Fragment() {
             val directions=HowActiveAreYouDirections.actionHowActiveAreYouToMain2Activity()
             findNavController().navigate(directions)
             val db= Firebase.firestore
-            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("how active","none")
+            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("how active","1")
         }
 
         binding.button2.setOnClickListener{
             val directions=HowActiveAreYouDirections.actionHowActiveAreYouToMain2Activity()
             findNavController().navigate(directions)
             val db= Firebase.firestore
-            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("how active","1-3")
+            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("how active","2")
         }
         binding.button3.setOnClickListener{
             val directions=HowActiveAreYouDirections.actionHowActiveAreYouToMain2Activity()
             findNavController().navigate(directions)
             val db= Firebase.firestore
-            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("how active","4+")
+            db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).update("how active","3")
         }
         binding.tvSkip.setOnClickListener(){
             val directions=HowActiveAreYouDirections.actionHowActiveAreYouToMain2Activity()
