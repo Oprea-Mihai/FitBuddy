@@ -41,44 +41,41 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/currentSignImage"
-        />
+        app:layout_constraintTop_toBottomOf="@id/currentSignImage" />
 
     <Button
-        android:id="@+id/previous_sign"
+        android:id="@+id/previous_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="96dp"
         android:text="Previous"
-        app:layout_constraintBottom_toTopOf="@+id/currentSignName"
         app:layout_constraintEnd_toStartOf="@+id/forward_sign"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/forward_sign"
+        android:id="@+id/forward_exercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="64dp"
         android:text="Forward"
         app:layout_constraintBottom_toTopOf="@+id/currentSignName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/new_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Click me"
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="152dp"
+        android:layout_height="18dp"
+        android:text="NIVEL DE DIFICULTATE"
         app:layout_constraintBottom_toTopOf="@+id/currentPrevisionText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentSignImage"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintTop_toBottomOf="@+id/currentSignImage" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

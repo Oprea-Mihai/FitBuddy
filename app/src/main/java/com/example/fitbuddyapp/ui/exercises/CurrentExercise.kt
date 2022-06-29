@@ -6,9 +6,11 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.example.fitbuddyapp.R
 import com.example.fitbuddyapp.databinding.CurrentExerciseFragmentBinding
+import com.example.fitbuddyapp.ui.exercises.ExerciseObject.getSignSize
 
 class CurrentExercise:Fragment(R.layout.current_exercise_fragment) {
 
@@ -31,20 +33,25 @@ class CurrentExercise:Fragment(R.layout.current_exercise_fragment) {
         (activity as AppCompatActivity).supportActionBar?.title="${ExerciseObject.getTitle(args.positionArg)}"
 
         if(args.positionArg==0){
-            binding.previousSign.isInvisible=true
+            binding.previousExercise.isInvisible=true
         }
-        else if(args.positionArg==11){
-            binding.forwardSign.isInvisible=true
+        else if(args.positionArg==getSignSize()){
+            binding.forwardExercise.isInvisible=true
         }
 
         binding.currentSignImage.setImageResource(ExerciseObject.getImage(args.positionArg))
         binding.currentSignName.text = ExerciseObject.getTitle(args.positionArg)
         binding.currentPrevisionText.text= ExerciseObject.getDifficulty(args.positionArg)
 
-        binding.previousSign.setOnClickListener{
+        binding.previousExercise.setOnClickListener{
+            val action=CurrentExerciseDirections.actionCurrentFragmentSelf(positionArg = args.positionArg-1)
+            view?.let { Navigation.findNavController(it).navigate(action) }
+        }
 
-
-    }
+        binding.forwardExercise.setOnClickListener{
+            val action=CurrentExerciseDirections.actionCurrentFragmentSelf(positionArg = args.positionArg+1)
+            view?.let { Navigation.findNavController(it).navigate(action) }
+        }
     fun onStart() {
         super.onStart()
     }

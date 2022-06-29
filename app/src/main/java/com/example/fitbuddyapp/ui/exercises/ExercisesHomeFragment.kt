@@ -58,11 +58,7 @@ class ExercisesHomeFragment : Fragment() {
 
                 var difficulty = result.getString("how active")
                 for(index in 0..getSignSize()) {
-                    if (ExerciseObject.getDifficulty(index) == difficulty) {
                         val sign = ExerciseObject.getTitle(index).lowercase()
-                    }
-
-
                 }
             }
 

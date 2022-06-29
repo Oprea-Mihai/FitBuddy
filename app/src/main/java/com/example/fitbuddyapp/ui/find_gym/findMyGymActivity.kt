@@ -42,8 +42,8 @@ class findMyGymActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val brasov= LatLng(45.64375235310896, 25.621171646228667)
-        mMap.addMarker(MarkerOptions().position(brasov).title("Marker in Brasov"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(brasov))
+        val Brasov= LatLng(45.64375235310896, 25.621171646228667)
+        mMap.addMarker(MarkerOptions().position(Brasov).title("Marker in Brasov"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(Brasov))
     }
 }
