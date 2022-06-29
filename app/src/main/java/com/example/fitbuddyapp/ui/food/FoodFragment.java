@@ -10,9 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.fitbuddyapp.R;
+import com.example.fitbuddyapp.databinding.FragmentFoodBinding;
 import com.example.fitbuddyapp.ui.food.Listeners.RecipeResponseListener;
 import com.example.fitbuddyapp.ui.food.Models.RecipeApiResponse;
 
@@ -26,6 +29,7 @@ public class FoodFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    public FragmentFoodBinding binding;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -58,11 +62,11 @@ public class FoodFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        dialog = new ProgressDialog(getActivity());
-        dialog.setTitle("Loading");
-        manager = new RequestManager(getActivity());
-        manager.getRecipes(recipeResponseListener,"apples");
-        dialog.show();
+//        dialog = new ProgressDialog(getActivity());
+//        dialog.setTitle("Loading");
+//        manager = new RequestManager(getActivity());
+//        manager.getRecipes(recipeResponseListener,"chicken");
+//        dialog.show();
     }
 
     private final RecipeResponseListener recipeResponseListener = new RecipeResponseListener() {
@@ -82,10 +86,44 @@ public class FoodFragment extends Fragment {
         }
     };
 
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_food, container, false);
+//    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view=inflater.inflate(R.layout.fragment_food, container, false);
+        binding = FragmentFoodBinding.inflate(getLayoutInflater());
+
+        ImageButton button= (ImageButton) view.findViewById(R.id.imgButton_Search);
+        button.setOnClickListener(new View.OnClickListener() {
+
+
+
+            @Override
+            public void onClick(View v) {
+                EditText input=view.findViewById(R.id.editText_toSearch);
+            String searchField =input.getText().toString();
+                dialog = new ProgressDialog(getActivity());
+                dialog.setTitle("Loading");
+                manager = new RequestManager(getActivity());
+                manager.getRecipes(recipeResponseListener, searchField);
+                dialog.show();
+            }
+        });
+
+
+
+
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_food, container, false);
+        return view;
     }
 }
