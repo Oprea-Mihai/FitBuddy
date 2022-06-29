@@ -39,7 +39,7 @@ class CurrentExercise:Fragment(R.layout.current_exercise_fragment) {
 
         binding.currentSignImage.setImageResource(ExerciseObject.getImage(args.positionArg))
         binding.currentSignName.text = ExerciseObject.getTitle(args.positionArg)
-        binding.currentPrevisionText.text= ExerciseObject.getPrediction(args.positionArg)
+        binding.currentPrevisionText.text= ExerciseObject.getDifficulty(args.positionArg)
 
         binding.previousSign.setOnClickListener{
 
@@ -58,7 +58,7 @@ class CurrentExercise:Fragment(R.layout.current_exercise_fragment) {
         val shareIntent= Intent(Intent.ACTION_SEND)
         shareIntent.setType("text/plain")
             .putExtra(Intent.EXTRA_TEXT,
-                "${ExerciseObject.getTitle(args.positionArg)} - ${ExerciseObject.getPrediction(args.positionArg)}")
+                "${ExerciseObject.getTitle(args.positionArg)} - ${ExerciseObject.getDifficulty(args.positionArg)}")
         return shareIntent}
 
     }

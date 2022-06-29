@@ -11,13 +11,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitbuddyapp.databinding.FragmentExercisesHomeBinding
 import com.example.fitbuddyapp.ui.exercises.ExerciseObject.getSignSize
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.*
 
 class ExercisesHomeFragment : Fragment() {
 
     private var adapter:RecyclerView.Adapter<ExerciseViewHolder>?=null
     private lateinit var binding:FragmentExercisesHomeBinding
-
+    val db = Firebase.firestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,18 +54,22 @@ class ExercisesHomeFragment : Fragment() {
         var coroutineScope= CoroutineScope(job+Dispatchers.IO)
 
         coroutineScope.launch {
+            var user_data = db.collection("users").document(FirebaseAuth.getInstance().currentUser!!.uid).get().addOnSuccessListener { result ->
 
-            for(index in 0..getSignSize()){
-            val sign = ExerciseObject.getTitle(index).lowercase()
+                var difficulty = result.getString("how active")
+                for(index in 0..getSignSize()) {
+                    if (ExerciseObject.getDifficulty(index) == difficulty) {
+                        val sign = ExerciseObject.getTitle(index).lowercase()
+                    }
 
+
+                }
             }
+
         }
 
     }
-
-
     private fun onSelect(position: Int){
-        Log.i("Main Activity", "$position")
         val action=ExercisesHomeFragmentDirections.actionExerciseHomeFragmentToCurrentFragment(position)
         view?.let { Navigation.findNavController(it).navigate(action) }
     }
