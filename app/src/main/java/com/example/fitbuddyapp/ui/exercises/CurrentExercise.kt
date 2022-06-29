@@ -39,9 +39,10 @@ class CurrentExercise:Fragment(R.layout.current_exercise_fragment) {
             binding.forwardExercise.isInvisible=true
         }
 
-        binding.currentSignImage.setImageResource(ExerciseObject.getImage(args.positionArg))
+        binding.currentExerciseImage.setImageResource(ExerciseObject.getImage(args.positionArg))
         binding.currentSignName.text = ExerciseObject.getTitle(args.positionArg)
-        binding.currentPrevisionText.text= ExerciseObject.getDifficulty(args.positionArg)
+        binding.currentDifficultyText.text= ExerciseObject.getDifficulty(args.positionArg)
+        binding.currentnumberText.text= ExerciseObject.getNumber(args.positionArg).toString()
 
         binding.previousExercise.setOnClickListener{
             val action=CurrentExerciseDirections.actionCurrentFragmentSelf(positionArg = args.positionArg-1)

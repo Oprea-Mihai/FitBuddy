@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/currentSignImage"
+        android:id="@+id/currentExerciseImage"
         android:layout_width="200dp"
         android:layout_height="150dp"
         android:layout_marginTop="40dp"
@@ -31,17 +31,18 @@
         app:layout_constraintTop_toBottomOf="@+id/currentSignName" />
 
     <TextView
-        android:id="@+id/currentPrevisionText"
+        android:id="@+id/currentDifficultyText"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:background="@color/cardview_dark_background"
-        android:text="Descriere ?"
+        android:layout_marginTop="76dp"
+        android:background="@color/blue1"
+        android:text="Dificultate"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/currentSignImage" />
+        app:layout_constraintTop_toBottomOf="@id/currentExerciseImage" />
 
     <Button
         android:id="@+id/previous_exercise"
@@ -50,7 +51,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="96dp"
         android:text="Previous"
-        app:layout_constraintEnd_toStartOf="@+id/forward_sign"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -72,10 +72,36 @@
         android:layout_width="152dp"
         android:layout_height="18dp"
         android:text="NIVEL DE DIFICULTATE"
-        app:layout_constraintBottom_toTopOf="@+id/currentPrevisionText"
+        app:layout_constraintBottom_toTopOf="@+id/currentDifficultyText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentSignImage" />
+        app:layout_constraintTop_toBottomOf="@+id/currentExerciseImage" />
+
+    <TextView
+        android:id="@+id/nr_repetari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="NUMAR REPETARI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentDifficultyText" />
+
+    <TextView
+        android:id="@+id/currentnumberText"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blue1"
+        android:text="Numar repetari"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nr_repetari"
+        app:layout_constraintVertical_bias="0.068" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
