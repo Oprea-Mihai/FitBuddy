@@ -63,13 +63,17 @@
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2895" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/drawable/rounded_editetext.xml" value="0.2895" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/drawable/rounded_edittext.xml" value="0.2895" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_find_my_gym.xml" value="0.19010416666666666" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_main2.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_profil.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/activity_steps_counter.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/app_bar_main2.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/content_main2.xml" value="0.13880445795339413" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/d.xml" value="0.14739583333333334" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_blank.xml" value="0.19010416666666666" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_daily_macro.xml" value="0.19010416666666666" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_daily_macros.xml" value="0.264" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_exercises_home.xml" value="0.19010416666666666" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_first_screen.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_food.xml" value="0.284375" />
@@ -83,6 +87,7 @@
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_steps_counter.xml" value="0.25" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/fragment_third_screen.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/list_recipe.xml" value="0.2" />
+        <entry key="..\:/Desktop/FitBuddy/app/src/main/res/layout/nav_header_main2.xml" value="0.1816123188405797" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/menu/activity_main2_drawer.xml" value="0.9" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/menu/main2.xml" value="0.28541666666666665" />
         <entry key="..\:/Desktop/FitBuddy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.142" />

@@ -8,6 +8,12 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_profile"
             android:title="Profile" />
+
+        <item
+            android:id="@+id/nav_daily_macros"
+            android:icon="@drawable/macronutrient"
+            android:title="Daily macronutrients" />
+
         <item
             android:id="@+id/exercisesHomeFragment"
             android:icon="@drawable/ic_dumbbell"

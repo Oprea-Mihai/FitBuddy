@@ -43,7 +43,6 @@ class ProfileFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
